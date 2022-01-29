@@ -39,9 +39,10 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ message: 'No tag found with this id' });
         return;
       }
-      res.json(dbCategoryData);
+      res.json(dbTagData);
     })
     .catch(err => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
